@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+
+<title>College Fest</title>
+
+<style>
+h3 {
+	color: white;
+	background-color: #335FFF;
+	text-align: center;
+}
+
+h2 {
+	color: blue;
+	text-align: left;
+	text-decoration-style: solid;
+}
+
+.button-container {
+	display: flex;
+	/* Optional: Adjust flex properties as needed */
+	gap: 10px; /* Adds space between buttons */
+}
+</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<br> <br>
+		<h3>College Fest for Debate</h3>
+		<br>
+
+		<h2>View Student</h2>
+		<hr>
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr align="center">
+					<th>#</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Course</th>
+					<th>Country</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="tempStudent : ${student}">
+
+					<td th:text="${tempStudent.id}" />
+					<td th:text="${tempStudent.firstName}" />
+					<td th:text="${tempStudent.lastName}" />
+					<td th:text="${tempStudent.course}" />
+					<td th:text="${tempStudent.country}" />
+
+				</tr>
+			</tbody>
+			
+		</table>
+		<br>
+		
+		<hr>
+		<a th:href="@{/CollegeFest/studentlist}">Back to Students List</a>
+	</div>
+</body>
+</html>
+
+
+
